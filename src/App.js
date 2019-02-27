@@ -1,28 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from './components/Header.js';
+import Footer from './components/Footer.js';
+import MovieList from './components/MovieList.js';
+import axios from 'axios';
 import './App.css';
+
+const apiKey = `BgzeXsLe`;
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        
       </div>
     );
   }
+
+  componentDidMount() {
+    axios({
+      method: 'get',
+      url: `https://www.rijksmuseum.nl/api/en/collection`,
+      responseType: 'json',
+      params: {
+        key: apiKey,
+        format: 'json',
+        hasImage: true
+      }
+    }).then(response => {
+      response = response.data.artObjects;
+      this.setState({
+        art: response
+      })
+    })
+  }
+
+  render() {
+    return (
+      <div className="appComponent">
+        <Header />
+        <MovieList />
+        <Footer />
+      </div>
+    );
+  }
+
 }
 
 export default App;
