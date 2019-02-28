@@ -1,52 +1,22 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-
-const apiKey = `a4aa9b932ee8ac5ab8f7245f1d7364bb`;
 
 class MovieList extends Component {
-    constructor() {
-        super();
-        this.state = {
-            movies: [],
-        }
-    }
-
-    componentDidMount() {
-        axios({
-            method: 'get',
-            url: `https://api.themoviedb.org/3/search/movie?query=avengers&api_key=a4aa9b932ee8ac5ab8f7245f1d7364bb`,
-            responseType: 'json',
-            params: {
-                key: apiKey,
-                format: 'json',
-                hasImage: true
-            }
-        }).then(response => {
-            // console.log(response = response.data.results)
-            response = response.data.results
-            // allMovies = response.data.results;
-            console.log(response, 'test');
-
-            this.setState({
-                movies: response
-            })
-        })
-    }
-
     render() {
+        console.log(this.props);
+        console.log(this.props.movieDisplay);
         return (
             <div className="movieListComponent"> 
-                {
-                    this.state.movies.map((movie) => {
-                        return (
-                           <div>
-                                <h1>{movie.title}</h1>
-                                <p>{movie.overview}</p>
-                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="poster"/>
-                           </div>
-                        )
-                    })
-                }
+            {
+                this.props.movieDisplay.map((movie) => {
+                    return (
+                        <div key = {movie.id}>
+                            <h1>{movie.title}</h1>
+                            <p>{movie.overview}</p>
+                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Poster for ${movie.title}.`}/>
+                        </div>
+                    )
+                })
+            }
             </div>
         )
     }
