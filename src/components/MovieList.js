@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
+import OneMovie from '../components/OneMovie';
+
+
 
 class MovieList extends Component {
+    
     render() {
         console.log(this.props);
         console.log(this.props.movieDisplay);
@@ -9,11 +14,9 @@ class MovieList extends Component {
             {
                 this.props.movieDisplay.map((movie) => {
                     return (
-                        <div key = {movie.id}>
-                            <h1>{movie.title}</h1>
-                            <p>{movie.overview}</p>
-                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Poster for ${movie.title}.`}/>
-                        </div>
+                        <OneMovie 
+                            movie = {movie}
+                        />
                     )
                 })
             }
