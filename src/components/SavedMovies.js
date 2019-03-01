@@ -7,15 +7,16 @@ class SavedMovies extends Component {
         this.state = {
             saved: []
         }
+    }
 
-        // this.props.onMoviePick(event) {
-        //     const dbRef = firebase.database().ref();
-        //     dbRef.push(this.state.saved);
-        // }
+    onMovieDelete = () => {
+        console.log('deleted');
+        const movie = this.props.movie
 
-        // itemsRef.on('value', (saved) => {
-        //     console.log(saved.val());
-        // });
+        // firebase.database().ref(`movies`).push(movie)
+        const dbRef = firebase.database().ref(`movies`);
+        // push whatever the user typed in the input to firebase using the firebase push method
+        dbRef.remove(movie);
     }
 
     componentDidMount() {
@@ -36,19 +37,24 @@ class SavedMovies extends Component {
         });
     }
     // this.state.saved map through array and put it on page 
-
     render() {
+        
         return ( 
+            <div>
+                <h2>Your Watchlist</h2>
+            {
                 this.state.saved.map((movie) => {
                     return (
-                        <div className="watchListComponent">
-                        <h2>{movie.title}</h2>
+                        <div key = {movie.id} className="watchListComponent">
+                        <h3>{movie.title}</h3>
                         <p>{movie.overview}</p>
                         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Poster for ${movie.title}.`} />
+                        <button onClick={this.onMovieDelete}>Delete from list</button>
                         </div>
                     )
-                })
-            
+                })  
+            }
+        </div>
         );
     }
 }
