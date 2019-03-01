@@ -21,6 +21,7 @@ class OneMovie extends Component {
     }
     render() {
         const movie = this.props.movie
+        console.log(movie);
         return (
             
             <div key={movie.id}>

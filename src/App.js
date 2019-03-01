@@ -3,6 +3,7 @@ import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 import MovieList from './components/MovieList.js';
 import axios from 'axios';
+import SavedMovies from './components/SavedMovies.js';
 // import firebase from firebase;
 import './App.css';
 
@@ -63,6 +64,8 @@ class App extends Component {
         <MovieList
           movieDisplay={this.state.movies.length > 0 ? this.state.movies : []}   
         />
+
+        <SavedMovies />
 
         <Footer />
 
