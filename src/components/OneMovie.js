@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import firebase from '../firebase';
 
 class OneMovie extends Component {
     onMoviePick = () => {
         console.log('submitted');
         const movie = this.props.movie
-        console.log(movie);
+        // console.log(movie);
+        // this.props.onMoviePick(event) {
+        //     const dbRef = firebase.database().ref();
+        //     dbRef.push(this.state.saved);
+        // }
+
+        firebase.database().ref(`movies`).push(movie)
     }
     constructor() {
         super()
