@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 50%;
+}
+
+.poster {
+    margin-right: 2%;
+}
+
+.oneMovieComponent {
+    padding: 20px 0;
+}
+
+.movieListComponent {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}

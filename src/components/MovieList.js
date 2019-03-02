@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OneMovie from '../components/OneMovie';
+import '../styles/MovieList.css'
 
 
 
@@ -13,7 +14,7 @@ class MovieList extends Component {
             {
                 this.props.movieDisplay.map((movie) => {
                     return (
-                        <OneMovie 
+                        <OneMovie key={movie.id} 
                             movie = {movie}
                         />
                     )

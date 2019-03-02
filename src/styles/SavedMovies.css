@@ -1,0 +1,27 @@
+.savedMoviesList {
+    display: flex;
+    /* flex-direction: row; */
+    /* text-align: center; */
+    text-align: center;
+    /* display: block; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.savedMoviesComponent h2 {
+    text-align: center;
+}
+
+/* img {
+    width: 50%;
+} */
+
+.watchListComponent {
+    padding: 20px 0;
+}
+
+.watchListComponent button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+}

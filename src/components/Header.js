@@ -1,12 +1,19 @@
 import React from 'react';
 import FilterBar from './FilterBar.js'
+import '../styles/Header.css'
 
 const Header = (props) => {
     return (
-        <header className="headerComponent">
-            <h1>This is the header</h1>
-            <FilterBar onFilterSubmit={props.onFilterSubmit} />
-        </header>
+        <div className="headerComponent">
+        {
+            <header className="header">
+                <div className="wrapper">
+                    <h1>This is the header</h1>
+                    <FilterBar onFilterSubmit={props.onFilterSubmit} />
+                </div>
+            </header>
+        }
+        </div>
     );
 }
 

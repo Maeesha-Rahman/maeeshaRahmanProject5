@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../firebase.js';
+import '../styles/SavedMovies.css'
 
 class SavedMovies extends Component {
     constructor() {
@@ -46,21 +47,24 @@ class SavedMovies extends Component {
     render() {
         
         return ( 
-            <div>
+            <section className="savedMoviesComponent wrapper">
                 <h2>Your Watchlist</h2>
-            {   
-                this.state.saved.map((movie) => {
-                    return (
-                        <div key = {movie.id} className="watchListComponent">
-                        <h3>{movie.title}</h3>
-                        <p>{movie.overview}</p>
-                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Poster for ${movie.title}.`} />
-                        <button onClick={()=>this.onMovieDelete(movie.firebaseId)}>Delete from list</button>
-                        </div>
-                    )
-                })  
+            {
+                <div className="savedMoviesList">
+                {   
+                    this.state.saved.map((movie) => {
+                        return (
+                            <div key = {movie.id} className="watchListComponent">
+                                <h3>{movie.title}</h3>
+                                <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={`Poster for ${movie.title}.`} />
+                                <button onClick={()=>this.onMovieDelete(movie.firebaseId)}>Delete from list</button>
+                            </div>
+                        )
+                    })  
+                }
+                </div>
             }
-        </div>
+            </section>
         );
     }
 }

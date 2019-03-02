@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import firebase from '../firebase';
+import '../styles/MovieList.css'
 
 class OneMovie extends Component {
     onMoviePick = () => {
         console.log('submitted');
         const movie = this.props.movie
 
-        // firebase.database().ref(`movies`).push(movie)
         const dbRef = firebase.database().ref(`movies`);
-        // push whatever the user typed in the input to firebase using the firebase push method
+        
         dbRef.push(movie);
     }
+
     constructor() {
         super()
         this.state = {
@@ -21,14 +22,21 @@ class OneMovie extends Component {
         const movie = this.props.movie
         console.log(movie);
         return (
-            <div>
+            <div className="wrapper">
             {
-            <div key={movie.id}>
-                <h3>{movie.title}</h3>
-                <p>{movie.overview}</p>
-                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`Poster for ${movie.title}.`} />
-                <button onClick={this.onMoviePick}>Save Movie</button>
-            </div>
+            <section className="oneMovieComponent" key={movie.id}>
+                <div className="container">
+                    <div className="poster">
+                        <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={`Poster for ${movie.title}.`} />
+                    </div>
+                    <div className="content">
+                        <h3>{movie.title}</h3>
+                        <p>{movie.overview}</p>
+                        <a href={`https://www.themoviedb.org/movie/${movie.id}`} rel="noopener noreferrer" target="_blank">More Info</a>
+                        <button onClick={this.onMoviePick}>Save Movie</button>
+                    </div>
+                </div>
+            </section>
             }
             </div>
         )

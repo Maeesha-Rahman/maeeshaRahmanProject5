@@ -4,8 +4,8 @@ import Footer from './components/Footer.js';
 import MovieList from './components/MovieList.js';
 import axios from 'axios';
 import SavedMovies from './components/SavedMovies.js';
-// import firebase from firebase;
-import './App.css';
+import './styles/Setup.css';
+
 
 class App extends Component {
   constructor(props) {
