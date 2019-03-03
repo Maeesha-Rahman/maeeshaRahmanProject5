@@ -30,7 +30,8 @@ class OneMovie extends Component {
                         <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={`Poster for ${movie.title}.`} />
                     </div>
                     <div className="content">
-                        <h3>{movie.title}</h3>
+                        <h3>{movie.title} ({movie.release_date})</h3>
+                        <h4>User Score: {movie.vote_average}/10</h4>
                         <p>{movie.overview}</p>
                         <a href={`https://www.themoviedb.org/movie/${movie.id}`} rel="noopener noreferrer" target="_blank">More Info</a>
                         <button onClick={this.onMoviePick}>Save Movie</button>
