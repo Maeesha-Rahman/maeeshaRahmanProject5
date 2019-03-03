@@ -10,8 +10,13 @@
 
 .savedMoviesComponent h2 {
     text-align: center;
+    margin: 0;
 }
 
+.savedMoviesComponent {
+    background-color: #172023;
+    color: #fff;
+}
 /* img {
     width: 50%;
 } */
@@ -20,8 +25,18 @@
     padding: 20px 0;
 }
 
+.watchListComponent img {
+    box-shadow: 0 15px 40px rgba(255,255,255, .1);
+    transition: all .3s;
+}
+
+.watchListComponent img:hover {
+    transform: scale(1.05) translateY(-5px);
+	box-shadow: 0 25px 40px rgba(255,255, 255, .15);			
+}
+
 .watchListComponent button {
     display: block;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 10%;
 }

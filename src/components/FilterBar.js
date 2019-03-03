@@ -23,7 +23,7 @@ class FilterBar extends Component {
         return (
             <div className="filterBarComponent">
                 <form onSubmit={this.handleFormSubmit}>
-                    <label className="visually-hidden" htmlFor="search">
+                    <label className="visuallyHidden" htmlFor="search">
                         Search Movies:
 					</label>
                     <input

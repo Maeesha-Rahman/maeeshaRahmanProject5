@@ -1,11 +1,21 @@
 header {
-    background-color: green;
+    background-color: #13191c;
+    padding: 1px;
+    color: #fff;
 }
 
-input {
-    background-color: blue;
+header h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
 }
 
-header button {
-    background-color: pink;
-}

@@ -8,7 +8,7 @@ const Header = (props) => {
         {
             <header className="header">
                 <div className="wrapper">
-                    <h1>This is the header</h1>
+                    <h1>The watchlist</h1>
                     <FilterBar onFilterSubmit={props.onFilterSubmit} />
                 </div>
             </header>

@@ -47,10 +47,10 @@ class SavedMovies extends Component {
     render() {
         
         return ( 
-            <section className="savedMoviesComponent wrapper">
+            <section className="savedMoviesComponent">
                 <h2>Your Watchlist</h2>
             {
-                <div className="savedMoviesList">
+                <div className="savedMoviesList wrapper">
                 {   
                     this.state.saved.map((movie) => {
                         return (

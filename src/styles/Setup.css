@@ -4,6 +4,44 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700i,900,900i");
+
+
+.visuallyHidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.skipLink {
+    position: absolute;
+    left: -1000px;
+    top: 5px;
+    z-index: 999;
+    background: black;
+    color: white;
+}
+
+.skipLink:focus {
+    left: 0;
+}
+
+html {
+    font-size: 125%;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 .wrapper {
     max-width: 1280px;
     margin: 0 auto;
@@ -11,4 +49,39 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 img {
     display: block;
+}
+
+
+/* animation inspired by a PEN BY Muhammad Arslan Aslam */
+@keyframes glowing {
+  0% { background-color: #2acb99; box-shadow: 0 0 3px #2acb99; }
+  50% { background-color: #52d2aa; box-shadow: 0 0 40px #52d2aa; }
+  100% { background-color: #2acb99; box-shadow: 0 0 3px #2acb99; }
+}
+
+button,
+a {
+    border: none;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #2acb99;
+    color: #fff;
+    display: inline-block;
+	border-radius: 100px;
+	transition: all .1s;
+}
+
+button:hover,
+a:hover,
+button:focus,
+a:focus {
+    animation: glowing 1500ms infinite;
+}
+
+input:focus {
+    border: 2px solid #2acb99;
+}
+
+a {
+    margin-right: 3%;
 }
