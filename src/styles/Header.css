@@ -5,11 +5,17 @@ header {
     padding-top: 50px;
 }
 
+header p {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 0;
+}
+
 header h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
-    font-size: 40px;
+    font-size: 2.5rem;
     text-shadow:
     0 0 5px #fff,
     0 0 10px #fff,
@@ -28,13 +34,18 @@ header h1 {
 .filterBarComponent input {
     padding-left: 20px;
     padding-right: 50px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 0;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 80%;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
+    border: none;
+}
+
+input:focus {
+    outline: 2px solid #2acb99;
 }
 
 ::placeholder {

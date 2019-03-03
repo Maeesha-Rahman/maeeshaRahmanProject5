@@ -5,10 +5,38 @@
 
 .content {
     width: 50%;
+    background-color:#13191c;
+    border: 2px solid #000;
+    border-left: none;
 }
 
 .poster {
-    margin-right: 2%;
+    background-color:#13191c;
+    border: 2px solid #000;
+    border-right: none;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+}
+
+.content h4, p {
+    color: rgba(255,255,255, 0.9);
+}
+
+.content span {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: rgba(255,255,255, 0.7);
+}
+
+.content p {
+    padding-bottom: 20px;
+    width: 95%;
+}
+
+.poster {
+    padding-right: 3%;
 }
 
 .oneMovieComponent {

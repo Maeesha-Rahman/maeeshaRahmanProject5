@@ -57,7 +57,7 @@ class SavedMovies extends Component {
                             <div key = {movie.id} className="watchListComponent">
                                 <h3>{movie.title}</h3>
                                 <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={`Poster for ${movie.title}.`} />
-                                <button onClick={()=>this.onMovieDelete(movie.firebaseId)}>Delete from list</button>
+                                <button onClick={()=>this.onMovieDelete(movie.firebaseId)}>Delete From List</button>
                             </div>
                         )
                     })  
