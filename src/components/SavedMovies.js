@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from '../firebase.js';
 import '../styles/SavedMovies.css'
+import swal from '@sweetalert/with-react';
 
 class SavedMovies extends Component {
     constructor() {
@@ -16,6 +17,8 @@ class SavedMovies extends Component {
         const dbRef = firebase.database().ref(`movies/${key}`);
         
         dbRef.remove(movie);
+
+        swal("Removed from watchlist!");
     }
 
     componentDidMount() {

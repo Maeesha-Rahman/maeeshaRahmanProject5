@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from '../firebase';
 import '../styles/MovieList.css'
+import swal from '@sweetalert/with-react';
 
 class OneMovie extends Component {
     onMoviePick = () => {
@@ -9,6 +10,8 @@ class OneMovie extends Component {
         const dbRef = firebase.database().ref(`movies`);
         
         dbRef.push(movie);
+
+        swal("Added to watchlist!");
     }
 
     constructor() {
