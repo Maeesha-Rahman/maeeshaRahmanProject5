@@ -2,10 +2,12 @@ header {
     background-color: #13191c;
     padding: 1px;
     color: #fff;
+    padding-top: 50px;
 }
 
 header h1 {
     text-transform: uppercase;
+    letter-spacing: 2px;
     text-align: center;
     font-size: 40px;
     text-shadow:
@@ -19,3 +21,26 @@ header h1 {
     0 0 150px #0ff;
 }
 
+.filterBarComponent button {
+    border-radius: 0;
+}
+
+.filterBarComponent input {
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 0;
+    margin-top: 5%;
+    width: 80%;
+    background-color: transparent;
+    color: #fff;
+}
+
+::placeholder {
+    color: #fff;
+}
+
+.filterBarComponent {
+    text-align: center;
+}
