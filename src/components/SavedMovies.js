@@ -11,12 +11,10 @@ class SavedMovies extends Component {
     }
 
     onMovieDelete = (key) => {
-        console.log('deleted');
         const movie = this.props.movie
        
-        // firebase.database().ref(`movies`).push(movie)
         const dbRef = firebase.database().ref(`movies/${key}`);
-        // push whatever the user typed in the input to firebase using the firebase push method
+        
         dbRef.remove(movie);
     }
 
@@ -33,17 +31,13 @@ class SavedMovies extends Component {
                 })
             });
 
-            console.log(newState)
-
             this.setState({
                 saved : newState
             })
-            console.log(this.state.saved);
-            })
+        })
 
-        };
+    };
     
-    // this.state.saved map through array and put it on page 
     render() {
         
         return ( 

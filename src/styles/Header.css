@@ -11,6 +11,8 @@ header p {
     margin-bottom: 0;
 }
 
+/* neon text effect inspired by a PEN BY Matt Smith */
+
 header h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -54,4 +56,32 @@ input:focus {
 
 .filterBarComponent {
     text-align: center;
+}
+
+/* media queries */
+
+
+@media (max-width: 515px) {
+    .filterBarComponent button {
+        width: 80%;
+        margin-top: 2%;
+    }
+    .filterBarComponent input {
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    header p {
+        font-size: 0.9rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 360px) {
+    header p {
+        font-size: 0.8rem;
+    }
 }

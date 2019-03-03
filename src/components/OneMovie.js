@@ -4,7 +4,6 @@ import '../styles/MovieList.css'
 
 class OneMovie extends Component {
     onMoviePick = () => {
-        console.log('submitted');
         const movie = this.props.movie
 
         const dbRef = firebase.database().ref(`movies`);
@@ -20,7 +19,6 @@ class OneMovie extends Component {
     }
     render() {
         const movie = this.props.movie
-        console.log(movie);
         return (
             <div className="wrapper">
             {

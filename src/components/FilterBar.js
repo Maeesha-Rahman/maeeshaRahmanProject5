@@ -10,14 +10,12 @@ class FilterBar extends Component {
     }
     
     handleSearchChange = (event) => {
-        console.log(event.target.value);
         this.setState({
             searchQuery: event.target.value
         })
     }
     handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log('in handle submit', this.state.searchQuery);
         this.props.onFilterSubmit(this.state.searchQuery);
     }
     render() {

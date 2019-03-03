@@ -5,10 +5,7 @@ import '../styles/MovieList.css'
 
 
 class MovieList extends Component {
-    
     render() {
-        console.log(this.props);
-        console.log(this.props.movieDisplay);
         return (
             <div className="movieListComponent"> 
             {
